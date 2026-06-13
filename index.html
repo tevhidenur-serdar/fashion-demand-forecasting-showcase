@@ -556,73 +556,17 @@
     }
 
     .video-card {
-      position: relative;
-      display: grid;
-      min-height: 330px;
       overflow: hidden;
-      place-items: center;
-      text-align: center;
-      background: var(--forest);
+      padding: 0;
+      aspect-ratio: 16 / 9;
+      background: #000;
     }
 
-    .video-card::before,
-    .video-card::after {
-      position: absolute;
-      content: "";
-      border-radius: 50%;
-    }
-
-    .video-card::before {
-      top: -110px;
-      right: -70px;
-      width: 260px;
-      height: 260px;
-      background: rgba(230, 184, 92, 0.9);
-    }
-
-    .video-card::after {
-      bottom: -95px;
-      left: -70px;
-      width: 230px;
-      height: 230px;
-      background: rgba(232, 111, 81, 0.9);
-    }
-
-    .video-content {
-      position: relative;
-      z-index: 1;
-      max-width: 410px;
-      color: white;
-    }
-
-    .play {
-      display: grid;
-      width: 76px;
-      height: 76px;
-      margin: 0 auto 20px;
-      place-items: center;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.12);
-      font-size: 1.3rem;
-      backdrop-filter: blur(8px);
-    }
-
-    .video-content p {
-      color: rgba(255, 255, 255, 0.72);
-    }
-
-    .video-status {
-      display: inline-block;
-      margin-top: 14px;
-      padding: 7px 12px;
-      border-radius: 999px;
-      color: var(--forest);
-      background: var(--gold);
-      font-size: 0.7rem;
-      font-weight: 900;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+    .video-card iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     .presentation-copy {
@@ -1054,14 +998,15 @@
 
     <section class="shell" aria-labelledby="presentation-title">
       <div class="presentation-grid">
-        <!-- Replace this placeholder with the project video after it is published. -->
-        <div class="video-card" aria-label="Project summary video coming soon">
-          <div class="video-content">
-            <div class="play" aria-hidden="true">▶</div>
-            <h3>Project Summary Video</h3>
-            <p>A concise, maximum two-minute overview of the problem, method, and results will appear here.</p>
-            <span class="video-status">Coming soon</span>
-          </div>
+        <div class="video-card">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/oC2YDdhP0WM"
+            title="Project summary presentation"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
         </div>
         <div class="presentation-copy">
           <p id="presentation-title" class="section-label">Presentation</p>
