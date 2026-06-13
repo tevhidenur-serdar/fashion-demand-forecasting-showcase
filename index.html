@@ -388,20 +388,11 @@
       box-shadow: 0 18px 55px rgba(31, 50, 40, 0.08);
     }
 
-    .feature-card:nth-child(2) {
-      color: white;
-      background: var(--forest);
-    }
-
     .feature-card p,
     .result-card p,
     .video-card p {
       margin-bottom: 0;
       color: var(--muted);
-    }
-
-    .feature-card:nth-child(2) p {
-      color: rgba(255, 255, 255, 0.72);
     }
 
     .icon {
@@ -445,51 +436,26 @@
       font-size: 0.9rem;
     }
 
-    .pipeline-flow {
-      display: grid;
-      align-items: stretch;
-      grid-template-columns: 1.1fr 44px 1fr 44px 1.1fr 44px 1fr;
+    .architecture-figure {
+      margin: 0;
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 22px;
+      background: white;
     }
 
-    .pipeline-node {
-      display: flex;
-      min-height: 150px;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 22px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.07);
+    .architecture-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
     }
 
-    .pipeline-node.accent {
-      color: var(--ink);
-      background: var(--gold);
-    }
-
-    .node-index {
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      opacity: 0.62;
-    }
-
-    .node-title {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.35rem;
-      line-height: 1.1;
-    }
-
-    .node-detail {
-      font-size: 0.78rem;
-      opacity: 0.67;
-    }
-
-    .flow-arrow {
-      display: grid;
-      place-items: center;
-      color: var(--gold);
-      font-size: 1.5rem;
+    .architecture-figure figcaption {
+      padding: 14px 8px 2px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-align: center;
     }
 
     .tech-cloud {
@@ -514,87 +480,79 @@
       transform: translateY(-2px);
     }
 
-    .metric-card {
-      position: relative;
-      overflow: hidden;
+    .results-tables {
+      display: grid;
+      gap: 24px;
     }
 
-    .metric-card::after {
-      position: absolute;
-      right: -45px;
-      bottom: -70px;
-      width: 180px;
-      height: 180px;
-      content: "";
-      border-radius: 50%;
-      background: var(--mint);
-      opacity: 0.65;
-    }
-
-    .metric-value {
-      position: relative;
-      z-index: 1;
-      margin: 6px 0;
-      color: var(--coral);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.3rem, 7vw, 5.8rem);
-      line-height: 0.95;
-      letter-spacing: -0.06em;
-    }
-
-    .metric-label {
-      position: relative;
-      z-index: 1;
-      color: var(--muted);
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-    }
-
-    .comparison {
-      margin-top: 24px;
+    .table-card {
       padding: 30px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.65);
+      box-shadow: 0 18px 55px rgba(31, 50, 40, 0.08);
     }
 
-    .comparison-row {
-      display: grid;
-      align-items: center;
-      grid-template-columns: 210px 1fr 70px;
-      gap: 18px;
-      margin-top: 18px;
+    .table-card h3 {
+      margin-bottom: 20px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.35rem;
+      font-weight: 500;
     }
 
-    .bar-track {
-      height: 12px;
+    .table-scroll {
       overflow: hidden;
-      border-radius: 99px;
-      background: var(--mint);
+      border: 1px solid var(--line);
+      border-radius: 16px;
     }
 
-    .bar {
-      height: 100%;
-      border-radius: inherit;
-      background: var(--sage);
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
     }
 
-    .bar.best {
-      background: var(--coral);
-    }
-
-    .bar-original {
-      width: 91%;
-    }
-
-    .bar-adjusted {
-      width: 84%;
-    }
-
-    .comparison strong:last-child {
+    .results-table th,
+    .results-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
       text-align: right;
+      white-space: nowrap;
+    }
+
+    .results-table th:first-child,
+    .results-table td:first-child,
+    .results-table.target-table th:nth-child(2),
+    .results-table.target-table td:nth-child(2) {
+      text-align: left;
+    }
+
+    .results-table thead th {
+      color: white;
+      background: var(--forest);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .results-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .results-table tbody tr:nth-child(even) {
+      background: rgba(220, 232, 216, 0.38);
+    }
+
+    .results-table .best {
+      color: var(--coral);
+      font-weight: 900;
+    }
+
+    .results-note {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 0.86rem;
     }
 
     .video-card {
@@ -737,14 +695,6 @@
         margin-top: 18px;
       }
 
-      .pipeline-flow {
-        grid-template-columns: 1fr;
-      }
-
-      .flow-arrow {
-        min-height: 44px;
-        transform: rotate(90deg);
-      }
     }
 
     @media (max-width: 600px) {
@@ -776,12 +726,16 @@
         padding: 26px;
       }
 
-      .comparison-row {
-        grid-template-columns: 1fr 58px;
+      .table-card {
+        padding: 20px;
       }
 
-      .comparison-row span:first-child {
-        grid-column: 1 / -1;
+      .table-scroll {
+        overflow-x: auto;
+      }
+
+      .results-table {
+        min-width: 720px;
       }
 
       .footer-inner {
@@ -816,7 +770,7 @@
       .feature-card,
       .result-card,
       .team-strip,
-      .comparison {
+      .table-card {
         box-shadow: none;
       }
     }
@@ -834,7 +788,6 @@
   <main>
     <section class="shell hero" aria-labelledby="project-title">
       <div>
-        <p class="eyebrow">Cold-start retail forecasting</p>
         <h1 id="project-title">Multi-Modal Demand Forecasting for <em>Fast Fashion</em> Products</h1>
         <p class="hero-copy">
           A multimodal forecasting system that combines product appearance, semantic descriptions,
@@ -881,9 +834,8 @@
         <article class="person">
           <span class="avatar" aria-hidden="true">YY</span>
           <div>
-            <p class="person-role">Project mentor</p>
+            <p class="person-role">Project assistant</p>
             <p class="person-name">Res. Asst. Yaren Yılmaz</p>
-            <p>AI &amp; Data Engineering</p>
           </div>
         </article>
         <article class="person">
@@ -891,7 +843,6 @@
           <div>
             <p class="person-role">Academic advisor</p>
             <p class="person-name">Prof. Dr. Şule Gündüz Öğüdücü</p>
-            <p>Faculty of Computer and Informatics Engineering</p>
           </div>
         </article>
       </div>
@@ -957,31 +908,10 @@
           </p>
         </div>
 
-        <div class="pipeline-flow" aria-label="Model pipeline">
-          <div class="pipeline-node">
-            <span class="node-index">INPUTS</span>
-            <span class="node-title">Image, caption &amp; attributes</span>
-            <span class="node-detail">ResNet-152 · BLIP · BERT · DistilBERT</span>
-          </div>
-          <span class="flow-arrow" aria-hidden="true">→</span>
-          <div class="pipeline-node">
-            <span class="node-index">CONTEXT</span>
-            <span class="node-title">Store, time &amp; internal trends</span>
-            <span class="node-detail">Embeddings · chronological history</span>
-          </div>
-          <span class="flow-arrow" aria-hidden="true">→</span>
-          <div class="pipeline-node">
-            <span class="node-index">MODEL</span>
-            <span class="node-title">Multimodal Transformer fusion</span>
-            <span class="node-detail">Decoder + auxiliary diffusion denoising</span>
-          </div>
-          <span class="flow-arrow" aria-hidden="true">→</span>
-          <div class="pipeline-node accent">
-            <span class="node-index">OUTPUT</span>
-            <span class="node-title">Seven-week demand forecast</span>
-            <span class="node-detail">Predictions returned in real sales units</span>
-          </div>
-        </div>
+        <figure class="architecture-figure">
+          <img src="figures/DiffusionModel%20Architecture.png" alt="Multimodal demand forecasting and auxiliary diffusion model architecture">
+          <figcaption>Multimodal forecasting architecture with visual, caption, text, temporal, trend, decoder, and diffusion-denoising components.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -1022,47 +952,109 @@
         </p>
       </div>
 
-      <div class="outcome-grid">
-        <article class="result-card metric-card">
-          <span class="metric-label">Best MAE</span>
-          <div class="metric-value">12.34</div>
-          <p>Down from 12.72 with original-sales training, an improvement of approximately 3.0%.</p>
+      <div class="results-tables">
+        <article class="table-card">
+          <h3>Comparison of no-caption, LLM-caption and BLIP-caption models</h3>
+          <div class="table-scroll">
+            <table class="results-table">
+              <thead>
+                <tr>
+                  <th>Configuration</th>
+                  <th>MAE</th>
+                  <th>RMSE</th>
+                  <th>Bias</th>
+                  <th>WAPE%</th>
+                  <th>sMAPE%</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>LLM caption disabled</td>
+                  <td>14.41</td>
+                  <td>20.62</td>
+                  <td>-0.37</td>
+                  <td>53.14</td>
+                  <td class="best">48.79</td>
+                </tr>
+                <tr>
+                  <td>M2TFM LLM caption</td>
+                  <td>13.54</td>
+                  <td>18.78</td>
+                  <td class="best">+0.36</td>
+                  <td class="best">49.41</td>
+                  <td>51.40</td>
+                </tr>
+                <tr>
+                  <td>M2TFM BLIP caption</td>
+                  <td class="best">12.72</td>
+                  <td class="best">18.29</td>
+                  <td>-3.27</td>
+                  <td>51.28</td>
+                  <td>54.01</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </article>
-        <article class="result-card metric-card">
-          <span class="metric-label">Best RMSE</span>
-          <div class="metric-value">17.82</div>
-          <p>Reduced from 18.29 while evaluating both models on untouched original sales.</p>
-        </article>
-        <article class="result-card metric-card">
-          <span class="metric-label">Best WAPE</span>
-          <div class="metric-value">49.74%</div>
-          <p>Improved from 51.28%, indicating lower aggregate absolute forecast error.</p>
-        </article>
-        <article class="result-card metric-card">
-          <span class="metric-label">Hit rate within 20%</span>
-          <div class="metric-value">23.24%</div>
-          <p>The best result among the controlled original-sales and adjusted-sales comparison.</p>
-        </article>
-      </div>
 
-      <div class="comparison" aria-label="MAE comparison">
-        <h3>Controlled target comparison · lower MAE is better</h3>
-        <div class="comparison-row">
-          <span>Original-sales training</span>
-          <span class="bar-track"><span class="bar bar-original"></span></span>
-          <strong>12.72</strong>
-        </div>
-        <div class="comparison-row">
-          <span>Stock-aware training</span>
-          <span class="bar-track"><span class="bar best bar-adjusted"></span></span>
-          <strong>12.34</strong>
-        </div>
+        <article class="table-card">
+          <h3>Target-construction comparison</h3>
+          <div class="table-scroll">
+            <table class="results-table target-table">
+              <thead>
+                <tr>
+                  <th>Model training target</th>
+                  <th>Evaluation target</th>
+                  <th>MAE</th>
+                  <th>RMSE</th>
+                  <th>WAPE%</th>
+                  <th>sMAPE%</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Original sales</td>
+                  <td>Original sales</td>
+                  <td>12.72</td>
+                  <td>18.29</td>
+                  <td>51.28</td>
+                  <td>54.01</td>
+                </tr>
+                <tr>
+                  <td>Early lost-sales target</td>
+                  <td>Early lost-sales target</td>
+                  <td>22.60</td>
+                  <td>35.43</td>
+                  <td>61.55</td>
+                  <td>64.54</td>
+                </tr>
+                <tr>
+                  <td>Adjusted-sales target</td>
+                  <td>Original sales</td>
+                  <td class="best">12.34</td>
+                  <td class="best">17.82</td>
+                  <td>49.74</td>
+                  <td>52.54</td>
+                </tr>
+                <tr>
+                  <td>Adjusted-sales target</td>
+                  <td>Adjusted-sales target</td>
+                  <td>12.35</td>
+                  <td>17.84</td>
+                  <td class="best">49.69</td>
+                  <td class="best">52.53</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="results-note">The primary controlled result compares models evaluated against untouched original sales.</p>
+        </article>
       </div>
     </section>
 
     <section class="shell" aria-labelledby="presentation-title">
       <div class="presentation-grid">
-        <!-- Replace this placeholder with a YouTube link or embed after the project video is published. -->
+        <!-- Replace this placeholder with the project video after it is published. -->
         <div class="video-card" aria-label="Project summary video coming soon">
           <div class="video-content">
             <div class="play" aria-hidden="true">▶</div>
@@ -1072,10 +1064,9 @@
           </div>
         </div>
         <div class="presentation-copy">
-          <p class="section-label">Presentation</p>
-          <h2 id="presentation-title">The project in two minutes.</h2>
+          <p id="presentation-title" class="section-label">Presentation</p>
           <p>
-            The final YouTube presentation will summarize the forecasting challenge, multimodal model,
+            The final presentation will summarize the forecasting challenge, multimodal model,
             rolling experiment design, and key stock-aware result.
           </p>
           <ul>
